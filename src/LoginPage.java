@@ -2,7 +2,6 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.util.Collection;
 import java.util.HashMap;
 
 public class LoginPage implements ActionListener {
@@ -11,7 +10,7 @@ public class LoginPage implements ActionListener {
      JButton loginButton = new JButton("Login");
      JButton resetButton = new JButton("Reset");
      JTextField userIDField = new JTextField();
-     JPasswordField userPasswoerdField = new JPasswordField();
+     JPasswordField userPasswordField = new JPasswordField();
      JLabel userIDLabel = new JLabel("userID: ");
      JLabel userPasswordLabel = new JLabel("password: ");
      JLabel messageLabel = new JLabel();
@@ -30,7 +29,7 @@ public class LoginPage implements ActionListener {
 	    messageLabel.setFont(new Font(null, Font.ITALIC, 25));
 	    
 	    userIDField.setBounds(125, 100, 200, 25);
-	    userPasswoerdField.setBounds(125, 150, 200, 25);
+	    userPasswordField.setBounds(125, 150, 200, 25);
 	    
 	    loginButton.setBounds(125, 200, 100, 25);
 	    loginButton.setFocusable(false);
@@ -44,7 +43,7 @@ public class LoginPage implements ActionListener {
 	    frame.add(userPasswordLabel);
 	    frame.add(messageLabel);
 	    frame.add(userIDField);
-	    frame.add(userPasswoerdField);
+	    frame.add(userPasswordField);
 	    frame.add(loginButton);
 	    frame.add(resetButton);
 	    
@@ -59,13 +58,13 @@ public class LoginPage implements ActionListener {
 	    
           if (e.getSource() == resetButton) {
                userIDField.setText("");
-               userPasswoerdField.setText("");
+               userPasswordField.setText("");
 	    }
      
           if (e.getSource() == loginButton) {
                
                String userID = userIDField.getText();
-               String password = String.valueOf(userPasswoerdField.getPassword());
+               String password = String.valueOf(userPasswordField.getPassword());
                
                if (loginInfo.containsKey(userID)) {
                     if (loginInfo.get(userID).equals(password)) {
