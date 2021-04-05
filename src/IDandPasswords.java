@@ -7,8 +7,8 @@ public class IDandPasswords {
      IDandPasswords() {
           
           logininfo.put("Pyrek", "pyrek");
-          logininfo.put("Alan", "alan");
-          logininfo.put("Karolina", "karolina");
+          logininfo.put("xDee", "xdee");
+          logininfo.put("Avalos", "avalos");
      }
      
      protected HashMap<String, String> getLoginInfo () {
